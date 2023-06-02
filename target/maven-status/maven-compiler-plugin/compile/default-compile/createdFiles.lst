@@ -1,0 +1,16 @@
+com\example\studentmanagementsystem\service\impl\ResourcesServiceImpl.class
+com\example\studentmanagementsystem\service\impl\StudentServiceImpl.class
+com\example\studentmanagementsystem\repository\ResourcesRepository.class
+com\example\studentmanagementsystem\repository\EmployeeRepository.class
+com\example\studentmanagementsystem\service\EmployeeService.class
+com\example\studentmanagementsystem\StudentManagementSystemApplication.class
+com\example\studentmanagementsystem\repository\StudentRepository.class
+com\example\studentmanagementsystem\service\impl\EmployeeServiceImpl.class
+com\example\studentmanagementsystem\controller\ResourcesController.class
+com\example\studentmanagementsystem\controller\EmployeeController.class
+com\example\studentmanagementsystem\controller\StudentController.class
+com\example\studentmanagementsystem\service\StudentService.class
+com\example\studentmanagementsystem\entity\Resources.class
+com\example\studentmanagementsystem\entity\Employee.class
+com\example\studentmanagementsystem\entity\Student.class
+com\example\studentmanagementsystem\service\ResourcesService.class

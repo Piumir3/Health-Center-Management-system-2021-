@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Medical Staff Members</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    .scroll {
+      overflow-y: scroll;
+      height: 700px;
+
+      margin: 10px 5px; padding: 5px;
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" th:href="@{/}">Health Center</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Student Health Management System</a>
+
+      </li>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <li class="active">
+        <a th:href="@{/staff}" class="btn btn-light btn-sm mb-3">Show Employees</a>
+        &nbsp;&nbsp;
+        <a th:href="@{/students}" class="btn btn-info btn-sm mb-3">Show Students</a>
+        &nbsp;&nbsp;
+        <a th:href="@{/resources}" class="btn btn-secondary btn-sm mb-3">Show resources</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+<div>
+
+</div>
+<br/>
+<br/>
+<div class="container my-2">
+  <h1>Medical staff members </h1>
+
+  <div>
+    <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>
+  </div>
+  <table  class="table table-striped table-responsive-md">
+    <thead class="table-dark">
+    <tr>
+      <th>Employee First Name</th>
+      <th>Employee Last Name</th>
+      <th>Employee Role </th>
+      <th>Employee Email</th>
+      <th> Actions </th>
+    </tr>
+    </thead >
+    <tbody>
+    <tr th:each="employee : ${listEmployees}">
+      <td th:text="${employee.firstName}"></td>
+      <td th:text="${employee.lastName}"></td>
+      <td th:text="${employee.role}"></td>
+      <td th:text="${employee.email}"></td>
+      <td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
+        <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
